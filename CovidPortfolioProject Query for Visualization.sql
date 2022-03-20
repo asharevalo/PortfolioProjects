@@ -47,12 +47,7 @@ order by PercentPopulationInfected desc
 
 
 
-
--- Queries I originally had, but excluded some because it created too long of video
--- Here only in case you want to check them out
-
-
--- 1.
+-- 5.
 
 Select dea.continent, dea.location, dea.date, dea.population
 , MAX(vac.total_vaccinations) as RollingPeopleVaccinated
@@ -66,7 +61,7 @@ group by dea.continent, dea.location, dea.date, dea.population
 order by 1,2,3
 
 
--- 2.
+-- 6.
 Select SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, SUM(cast(new_deaths as int))/SUM(New_Cases)*100 as DeathPercentage
 From PortfolioProject..CovidDeaths$
 --Where location like '%states%'
